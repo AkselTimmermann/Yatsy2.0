@@ -1,4 +1,4 @@
-import { dices, onePairScore, decreaseCounter, counter } from "./Logik.js"
+import { dices, onePairScore, decreaseCounter, counter, resetCounter } from "./Logik.js"
 let slåKnap = document.querySelector('#terningerKnap')
 let terninger = document.querySelectorAll('.terning')
 let checkbox = document.querySelectorAll('.cb')
@@ -34,4 +34,10 @@ for (let v of variableArray) {
     })
 }
 
+nytSpil.addEventListener("click", function() {
+    resetCounter()
+    for (let v of  variableArray) {
+        
+    }
 
+})

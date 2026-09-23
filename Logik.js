@@ -14,6 +14,10 @@ export function decreaseCounter() {
     counter--
 }
 
+export function resetCounter() {
+    counter = 3
+}
+
 function upperSectionScore(dices, eyes) {
     let  sum = 0;
     for (let d of dices) {
