@@ -21,8 +21,7 @@ let chance = document.querySelector('#chancen')
 let yatzy = document.querySelector('#yatzy')
 
 let variableArray = []
-
-
+let nytSpil = document.querySelector('#nytSpilKnap')
 
 slåKnap.addEventListener("click", function () {
     if (counter > 0) {
@@ -62,3 +61,5 @@ for (let v of variableArray) {
         v.disabled = true
     })
 }
+
+
