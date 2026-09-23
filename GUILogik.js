@@ -98,6 +98,9 @@ nytSpil.addEventListener("click", function() {
         v.disabled = false
         v.value = ""
     }
+    for (let cb of checkbox) {
+        cb.checked = false
+    }
         for (let t of terninger) {
         t.src = "images/dice1.png"
     }

@@ -44,7 +44,7 @@ function sumScore(sectionScores) {
 }
 
 function bonusScore(lockedUpperSectionScores) {
-    if (sum(lockedUpperSectionScores) >= 63) {
+    if (sumScore(lockedUpperSectionScores) >= 63) {
         return 50;
     }
     else return 0;
@@ -130,7 +130,7 @@ function yatzyScore() {
 }
 
 function totalScore(lockedUpperSectionScores, lockedLowerSectionScores) {
-    return sum(lockedUpperSectionScores) + bonus(lockedUpperSectionScores) + sum(lockedLowerSectionScores);
+    return sumScore(lockedUpperSectionScores) + bonusScore(lockedUpperSectionScores) + sumScore(lockedLowerSectionScores);
 }
 
 export {dices, upperSectionScore, sumScore, bonusScore, onePairScore, twoPairScore, threeOfAKindScore, fourOfAKindScore, smallStraightScore, largeStraightScore, fullHouseScore, chanceScore, yatzyScore, decreaseCounter, counter, totalScore, resetCounter}
