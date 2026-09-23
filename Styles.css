@@ -1,0 +1,92 @@
+body {
+    background-color: #f5f5cf;
+}
+
+.dice {
+    width: 280px;
+    border: 1px solid #b8c96b;
+    padding: 20px;
+    margin: 20px;
+}
+
+.dice-row {
+    display: flex;
+    gap: 5px;
+}
+
+.dice-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dice-row img {
+    width: 50px;
+    height: 50px;
+}
+
+#terningerKnap {
+    margin-top: 15px;
+}
+
+.upperSection {
+    width: 280px;
+    border: 1px solid #b8c96b;
+    padding: 10px 20px;
+    margin: 20px;
+}
+
+.labelText {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.labelText label {
+    display: grid;
+    grid-template-columns: 90px 40px;
+    align-items: center;
+}
+
+.labelText input {
+    width: 30px;
+}
+
+.sumBonus {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.sumBonus label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.sumBonus input {
+    width: 30px;
+}
+
+.lowerSection {
+    width: 280px;
+    border: 1px solid #b8c96b;
+    padding: 10px 20px;
+    margin: 20px;
+}
+
+.yatzyTotal {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.yatzyTotal label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.yatzyTotal input {
+    width: 30px;
+}

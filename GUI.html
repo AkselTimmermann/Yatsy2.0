@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+    <title>Yatzy</title>
+    <link rel="stylesheet" href="Styles.css"/>
+    <script src="GUILogik.js" type="module"></script>
+</head>
+<body>
+<div class="dice">
+    <div class="dice-row">
+        <div class="dice-item">
+            <img class="terning" src="images/dice1.png" alt="Terning 1">
+            <input type="checkbox" class="cb">
+        </div>
+        <div class="dice-item">
+            <img class="terning" src="images/dice1.png" alt="Terning 2">
+            <input type="checkbox" class="cb">
+        </div>
+        <div class="dice-item">
+            <img class="terning" src="images/dice1.png" alt="Terning 3">
+            <input type="checkbox" class="cb">
+        </div>
+        <div class="dice-item">
+            <img class="terning" src="images/dice1.png" alt="Terning 4">
+            <input type="checkbox" class="cb">
+        </div>
+        <div class="dice-item">
+            <img class="terning" src="images/dice1.png" alt="Terning 5">
+            <input type="checkbox" class="cb">
+        </div>
+    </div>
+    <label id="counter">slag tilbage: 3 </label>
+    <button id="terningerKnap">Slå terninger</button>
+</div>
+<div class="upperSection">
+    <div class="labelText">
+        <label>1'ere <input type="text" id="et" readonly></label>
+        <label>2'ere <input type="text" id="to" readonly></label>
+        <label>3'ere <input type="text" id="tre" readonly></label>
+        <label>4'ere <input type="text" id="fire" readonly></label>
+        <label>5'ere <input type="text" id="fem" readonly></label>
+        <label>6'ere <input type="text" id="seks" readonly></label>
+    </div>
+    <div class=sumBonus>
+        <label>Sum <input type="text" id="sum" readonly></label>
+        <label>Bonus <input type="text" readonly></label>
+    </div>
+</div>
+<div class="lowerSection">
+    <div class="labelText">
+        <label>et par<input type="text" id="etPar" readonly></label>
+        <label>to par<input type="text" id="toPar" readonly></label>
+        <label>tre ens<input type="text" id="treEns" readonly></label>
+        <label>fire ens<input type="text" id="fireEns" readonly></label>
+        <label>fuldt hus<input type="text" id="fuldtHus" readonly></label>
+        <label>lille straight<input type="text" id="lilleStraight" readonly></label>
+        <label>stor straight<input type="text" id="storStraight" readonly></label>
+        <label>chancen<input type="text" id="chancen" readonly></label>
+        <label>Yatzy<input type="text" id="yatzy" readonly></label>
+    </div>
+    <div class="yatzyTotal">
+        <label>Total <input type="text" id="total" readonly></label>
+    </div>
+</div>
+</body>
