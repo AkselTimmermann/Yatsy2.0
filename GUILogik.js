@@ -20,7 +20,7 @@ let fuldtHus = document.querySelector('#fuldtHus')
 let chance = document.querySelector('#chancen')
 let yatzy = document.querySelector('#yatzy')
 
-let variableArray = []
+let variableArray = [et, to, tre, fire, fem, seks, etPar, toPair, treEns, fireEns, lilleStraight, storStraight, fuldtHus, chance, yatzy]
 let nytSpil = document.querySelector('#nytSpilKnap')
 
 slåKnap.addEventListener("click", function () {
@@ -61,11 +61,3 @@ for (let v of variableArray) {
         v.disabled = true
     })
 }
-
-nytSpil.addEventListener("click", function() {
-    resetCounter()
-    for (let v of  variableArray) {
-
-    }
-
-})
