@@ -1,7 +1,7 @@
 import { dices, upperSectionScore, 
     sumScore, bonusScore, 
     onePairScore, twoPairScore, threeOfAKindScore, fourOfAKindScore, fullHouseScore, smallStraightScore, largeStraightScore, chanceScore, yatzyScore, decreaseCounter, counter, 
-    totalScore 
+    totalScore, resetCounter
 } from "./Logik.js"
 let slåKnap = document.querySelector('#terningerKnap')
 let terninger = document.querySelectorAll('.terning')
@@ -42,9 +42,8 @@ slåKnap.addEventListener("click", function () {
             }
         }
         decreaseCounter()
-        opdaterValues()
+        }
         slagTilbage.innerHTML = "Slag tilbage: " + counter
-    }
 })
 
 function opdaterValues() {
@@ -87,15 +86,20 @@ nyRunde.addEventListener("click", function () {
     for (let t of terninger) {
         t.src = "images/dice1.png"
     }
+    for (let cb of checkbox) {
+        cb.checked = false
+    }
     resetCounter()
 })
 
 nytSpil.addEventListener("click", function() {
     for (let v of variableArray) {
+        v.disabled = false
         v.value = ""
     }
         for (let t of terninger) {
         t.src = "images/dice1.png"
     }
     resetCounter()
+
 })
