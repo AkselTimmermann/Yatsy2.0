@@ -30,6 +30,7 @@ let total = document.querySelector('#total')
 
 let variableArray = [et, to, tre, fire, fem, seks, etPar, toPair, treEns, fireEns, lilleStraight, storStraight, fuldtHus, chance, yatzy]
 let nytSpil = document.querySelector('#nytSpilKnap')
+let nyRunde = document.querySelector('#nyRundeKnap')
 
 slåKnap.addEventListener("click", function () {
     if (counter > 0) {
@@ -76,3 +77,25 @@ for (let v of variableArray) {
         v.disabled = true
     })
 }
+
+nyRunde.addEventListener("click", function () {
+    for (let v of variableArray) {
+        if (!v.disabled) {
+            v.value = ""
+        }
+    }
+    for (let t of terninger) {
+        t.src = "images/dice1.png"
+    }
+    resetCounter()
+})
+
+nytSpil.addEventListener("click", function() {
+    for (let v of variableArray) {
+        v.value = ""
+    }
+        for (let t of terninger) {
+        t.src = "images/dice1.png"
+    }
+    resetCounter()
+})
