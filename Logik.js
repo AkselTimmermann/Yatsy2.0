@@ -14,16 +14,6 @@ function decreaseCounter() {
     counter--
 }
 
-function upperSectionScore(eyes) {
-    let  sum = 0;
-    for (let d of dices) {
-        if (d === eyes) {
-            sum += d
-        }
-    }
-    return sum;
-}
-
 // Felterne 1-6 symboliserer hver sin terning. "Count" tæller hvor mange terninger der er af hver "størrelse"
 // Feltet 0 bliver ikke brugt
 function countEyes() {
@@ -33,6 +23,11 @@ function countEyes() {
         }
         return counts;
     }
+
+function upperSectionScore(eye) {
+    let c = countEyes();
+    return c[eye] * eye;
+}
 
 // Starter med højeste tal (6). Hvis hvis der findes flere terninger, vælges den. 
 function onePairScore() {

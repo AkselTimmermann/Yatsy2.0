@@ -1,4 +1,4 @@
-import { dices, onePairScore, twoPairScore, threeOfAKindScore, fourOfAKindScore, fullHouseScore, smallStraightScore, largeStraightScore, chanceScore, yatzyScore, decreaseCounter, counter } from "./Logik.js"
+import { dices, upperSectionScore, onePairScore, twoPairScore, threeOfAKindScore, fourOfAKindScore, fullHouseScore, smallStraightScore, largeStraightScore, chanceScore, yatzyScore, decreaseCounter, counter } from "./Logik.js"
 let slåKnap = document.querySelector('#terningerKnap')
 let terninger = document.querySelectorAll('.terning')
 let checkbox = document.querySelectorAll('.cb')
@@ -39,21 +39,21 @@ slåKnap.addEventListener("click", function () {
 })
 
 function opdaterValues() {
-    //et.value = upperSectionScore(1)
-    //upperSectionScore(2)
-    //upperSectionScore(3)
-    //upperSectionScore(4)
-    //upperSectionScore(5)
-    //upperSectionScore(6)
+    et.value = upperSectionScore(1)
+    to.value = upperSectionScore(2)
+    tre.value = upperSectionScore(3)
+    fire.value = upperSectionScore(4)
+    fem.value = upperSectionScore(5)
+    seks.value = upperSectionScore(6)
     etPar.value = onePairScore()
     toPair.value = twoPairScore()
-    //treEns.value = threeOfAKindScore()
-    //fireEns.value = fourOfAKindScore()
-    //lilleStraight.value = smallStraightScore()
-    //storStraight.value = largeStraightScore()
-    //fuldtHus.value = fullHouseScore()
-    //chance.value = chanceScore(dices)
-    //yatzy.value = yatzyScore(dices)
+    treEns.value = threeOfAKindScore()
+    fireEns.value = fourOfAKindScore()
+    lilleStraight.value = smallStraightScore()
+    storStraight.value = largeStraightScore()
+    fuldtHus.value = fullHouseScore()
+    chance.value = chanceScore()
+    yatzy.value = yatzyScore()
 }
 
 for (let v of variableArray) {
