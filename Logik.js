@@ -18,6 +18,12 @@ function resetCounter() {
     counter = 3
 }
 
+function opdaterFelt(felt, score) {
+    if (!felt.disabled) {
+        felt.value = score
+    }
+}
+
 // Felterne 1-6 symboliserer hver sin terning. "Count" tæller hvor mange terninger der er af hver "størrelse"
 // Feltet 0 bliver ikke brugt
 function countEyes() {
@@ -133,4 +139,21 @@ function totalScore(lockedUpperSectionScores, lockedLowerSectionScores) {
     return sumScore(lockedUpperSectionScores) + bonusScore(lockedUpperSectionScores) + sumScore(lockedLowerSectionScores);
 }
 
-export {dices, upperSectionScore, sumScore, bonusScore, onePairScore, twoPairScore, threeOfAKindScore, fourOfAKindScore, smallStraightScore, largeStraightScore, fullHouseScore, chanceScore, yatzyScore, decreaseCounter, counter, totalScore, resetCounter}
+export {dices, 
+    upperSectionScore, 
+    sumScore, 
+    bonusScore, 
+    onePairScore, 
+    twoPairScore, 
+    threeOfAKindScore, 
+    fourOfAKindScore, 
+    smallStraightScore, 
+    largeStraightScore, 
+    fullHouseScore, 
+    chanceScore, 
+    yatzyScore, 
+    decreaseCounter, 
+    counter, 
+    totalScore, 
+    resetCounter,
+    opdaterFelt}

@@ -1,7 +1,7 @@
 import { dices, upperSectionScore, 
     sumScore, bonusScore, 
     onePairScore, twoPairScore, threeOfAKindScore, fourOfAKindScore, fullHouseScore, smallStraightScore, largeStraightScore, chanceScore, yatzyScore, decreaseCounter, counter, 
-    totalScore, resetCounter
+    totalScore, resetCounter, opdaterFelt
 } from "./Logik.js"
 let slåKnap = document.querySelector('#terningerKnap')
 let terninger = document.querySelectorAll('.terning')
@@ -48,33 +48,33 @@ slåKnap.addEventListener("click", function () {
 })
 
 function opdaterValues() {
-    et.value = upperSectionScore(1)
-    to.value = upperSectionScore(2)
-    tre.value = upperSectionScore(3)
-    fire.value = upperSectionScore(4)
-    fem.value = upperSectionScore(5)
-    seks.value = upperSectionScore(6)
-    
-    etPar.value = onePairScore()
-    toPair.value = twoPairScore()
-    treEns.value = threeOfAKindScore()
-    fireEns.value = fourOfAKindScore()
-    lilleStraight.value = smallStraightScore()
-    storStraight.value = largeStraightScore()
-    fuldtHus.value = fullHouseScore()
-    chance.value = chanceScore()
-    yatzy.value = yatzyScore()
-    let selectedUpperScores = [et, to, tre, fire, fem, seks].filter(v => v.disabled).map(v => parseInt(v.value))
-    let selectedLowerScores = [etPar, toPair, treEns, fireEns, lilleStraight, storStraight, fuldtHus, chance, yatzy].filter(v => v.disabled).map(v => parseInt(v.value))
+    opdaterFelt(et, upperSectionScore(1))
+    opdaterFelt(to, upperSectionScore(2))
+    opdaterFelt(tre, upperSectionScore(3))
+    opdaterFelt(fire, upperSectionScore(4))
+    opdaterFelt(fem, upperSectionScore(5))
+    opdaterFelt(seks, upperSectionScore(6))
 
-    sum.value = sumScore(selectedUpperScores)
-    bonus.value = bonusScore(selectedUpperScores)
-    total.value = totalScore(selectedUpperScores, selectedLowerScores)
+    opdaterFelt(etPar, onePairScore())
+    opdaterFelt(toPair, twoPairScore())
+    opdaterFelt(treEns, threeOfAKindScore())
+    opdaterFelt(fireEns, fourOfAKindScore())
+    opdaterFelt(lilleStraight, smallStraightScore())
+    opdaterFelt(storStraight, largeStraightScore())
+    opdaterFelt(fuldtHus, fullHouseScore())
+    opdaterFelt(chance, chanceScore())
+    opdaterFelt(yatzy, yatzyScore())
 }
 
 for (let v of variableArray) {
     v.addEventListener("click", function () {
         v.disabled = true
+        let selectedUpperScores = [et, to, tre, fire, fem, seks].filter(v => v.disabled).map(v => parseInt(v.value))
+        let selectedLowerScores = [etPar, toPair, treEns, fireEns, lilleStraight, storStraight, fuldtHus, chance, yatzy].filter(v => v.disabled).map(v => parseInt(v.value))
+        
+        sum.value = sumScore(selectedUpperScores)
+        bonus.value = bonusScore(selectedUpperScores)
+        total.value = totalScore(selectedUpperScores, selectedLowerScores)
     })
 }
 
@@ -91,6 +91,7 @@ nyRunde.addEventListener("click", function () {
         cb.checked = false
     }
     resetCounter()
+    slagTilbage.innerHTML = "Slag tilbage: " + counter
 })
 
 nytSpil.addEventListener("click", function() {
@@ -104,6 +105,10 @@ nytSpil.addEventListener("click", function() {
         for (let t of terninger) {
         t.src = "images/dice1.png"
     }
+    sum.value = ""
+    total.value = ""
+    bonus.value = ""
     resetCounter()
+    slagTilbage.innerHTML = "Slag tilbage: " + counter
 
 })
