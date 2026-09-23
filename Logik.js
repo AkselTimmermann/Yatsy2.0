@@ -14,6 +14,10 @@ function decreaseCounter() {
     counter--
 }
 
+function resetCounter() {
+    counter = 3
+}
+
 // Felterne 1-6 symboliserer hver sin terning. "Count" tæller hvor mange terninger der er af hver "størrelse"
 // Feltet 0 bliver ikke brugt
 function countEyes() {
@@ -24,9 +28,26 @@ function countEyes() {
         return counts;
     }
 
+
+
 function upperSectionScore(eye) {
     let c = countEyes();
     return c[eye] * eye;
+}
+
+function sumScore(sectionScores) {
+    let sum = 0;
+    for (let score of sectionScores) {
+        sum += score;
+    }
+    return sum;
+}
+
+function bonusScore(lockedUpperSectionScores) {
+    if (sum(lockedUpperSectionScores) >= 63) {
+        return 50;
+    }
+    else return 0;
 }
 
 // Starter med højeste tal (6). Hvis hvis der findes flere terninger, vælges den. 
@@ -108,4 +129,8 @@ function yatzyScore() {
     return 50;
 }
 
-export {dices, upperSectionScore, onePairScore, twoPairScore, threeOfAKindScore, fourOfAKindScore, smallStraightScore, largeStraightScore, fullHouseScore, chanceScore, yatzyScore, decreaseCounter, counter}
+function totalScore(lockedUpperSectionScores, lockedLowerSectionScores) {
+    return sum(lockedUpperSectionScores) + bonus(lockedUpperSectionScores) + sum(lockedLowerSectionScores);
+}
+
+export {dices, upperSectionScore, sumScore, bonusScore, onePairScore, twoPairScore, threeOfAKindScore, fourOfAKindScore, smallStraightScore, largeStraightScore, fullHouseScore, chanceScore, yatzyScore, decreaseCounter, counter, totalScore}
