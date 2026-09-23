@@ -133,4 +133,4 @@ function totalScore(lockedUpperSectionScores, lockedLowerSectionScores) {
     return sum(lockedUpperSectionScores) + bonus(lockedUpperSectionScores) + sum(lockedLowerSectionScores);
 }
 
-export {dices, upperSectionScore, sumScore, bonusScore, onePairScore, twoPairScore, threeOfAKindScore, fourOfAKindScore, smallStraightScore, largeStraightScore, fullHouseScore, chanceScore, yatzyScore, decreaseCounter, counter, totalScore}
+export {dices, upperSectionScore, sumScore, bonusScore, onePairScore, twoPairScore, threeOfAKindScore, fourOfAKindScore, smallStraightScore, largeStraightScore, fullHouseScore, chanceScore, yatzyScore, decreaseCounter, counter, totalScore, resetCounter}

@@ -42,6 +42,7 @@ slåKnap.addEventListener("click", function () {
             }
         }
         decreaseCounter()
+        opdaterValues()
         }
         slagTilbage.innerHTML = "Slag tilbage: " + counter
 })
