@@ -7,8 +7,7 @@ let slagTilbage = document.querySelector('#counter')
 let etPar = document.querySelector('#etPar')
 
 let variableArray = []
-
-
+let nytSpil = document.querySelector('#nytSpilKnap')
 
 slåKnap.addEventListener("click", function () {
     if (counter > 0) {
@@ -34,3 +33,5 @@ for (let v of variableArray) {
         v.disabled = true
     })
 }
+
+

@@ -90,3 +90,7 @@ body {
 .yatzyTotal input {
     width: 30px;
 }
+
+.yatzyTotal button {
+    margin-right: auto;
+}
