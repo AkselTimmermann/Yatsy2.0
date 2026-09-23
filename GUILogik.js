@@ -62,4 +62,10 @@ for (let v of variableArray) {
     })
 }
 
+nytSpil.addEventListener("click", function() {
+    resetCounter()
+    for (let v of  variableArray) {
 
+    }
+
+})
