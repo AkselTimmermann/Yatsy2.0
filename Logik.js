@@ -1,5 +1,5 @@
-export let counter = 3 //tæller til at sørge for der kun er 3 slag i alt, opdateres efter hvert slag
-export const dices = []
+let counter = 3 //tæller til at sørge for der kun er 3 slag i alt, opdateres efter hvert slag
+const dices = []
 
 // øvre sektion
 let etere , toere, treere, firere, femere;
@@ -10,7 +10,7 @@ let bonus; // nødvendig?
 let etPar, toPar, treEns, fireEns, lilleStraight, storeStraight, fuldtHus, chance, Yatzy;
 let total; // nødvendig?
 
-export function decreaseCounter() {
+function decreaseCounter() {
     counter--
 }
 
@@ -30,7 +30,7 @@ function upperSectionScore(dices, eyes) {
 
 // Felterne 1-6 symboliserer hver sin terning. "Count" tæller hvor mange terninger der er af hver "størrelse"
 // Feltet 0 bliver ikke brugt
-function countEyes(dices) {
+function countEyes() {
         let counts = [0,0,0,0,0,0,0];
         for (let d of dices) {
             counts[d]++;
@@ -39,8 +39,8 @@ function countEyes(dices) {
     }
 
 // Starter med højeste tal (6). Hvis hvis der findes flere terninger, vælges den. 
-export function onePairScore() {
-    let c = countEyes(dices);
+function onePairScore() {
+    let c = countEyes();
     for (let i = 6; i >= 1; i--) {
         if (c[i] >= 2) return i * 2;
     }
@@ -103,16 +103,18 @@ function fullHouseScore() {
     return (three > 0 && two > 0) ? three + two : 0;
 }
 
-function chanceScore(dices) {
+function chanceScore() {
     let sum = 0;
-    for (let d of dices) sum += d.getEyes();
+    for (let d of dices) sum += d;
     return sum;
 }
 
-function yatzyScore(dices) {
-    let first = dices[0].getEyes();
+function yatzyScore() {
+    let first = dices[0];
     for (let d of dices) {
-        if (d.getEyes() != first) return 0;
+        if (d != first) return 0;
     }
     return 50;
 }
+
+export {dices, upperSectionScore, onePairScore, twoPairScore, threeOfAKindScore, fourOfAKindScore, smallStraightScore, largeStraightScore, fullHouseScore, chanceScore, yatzyScore, decreaseCounter, counter}
